@@ -1,4 +1,5 @@
 // modified from zookeeper
+import "../../server";
 
 // const path = require('path');
 // const router = require('express').Router();
@@ -7,15 +8,7 @@
 //   res.sendFile(path.join(__dirname, 'public/notes.html'));
 // });
 
-// router.get('/zookeepers', (req, res) => {
-//   res.sendFile(path.join(__dirname, '../../public/zookeepers.html'));
-// });
-
-// router.get('/aquarium', (req, res) => {
-//   res.sendFile(path.join(__dirname, '../../public/aquarium.html'));
-// });
-
-// router.get('*', (req, res) => {
+// app.get('*', (req, res) => {
 //   res.sendFile(path.join(__dirname, '../../public/index.html'));
 // });
 
