@@ -27,6 +27,7 @@ function filterByQuery(query, notesArray) {
   return filteredResults;
 }
 
+//html routes
 app.get('/api/db', (req, res) => {
   let results = notes;
   if (req.query) {
@@ -38,6 +39,8 @@ app.get('/api/db', (req, res) => {
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, './public/index.html'));
 });
+
+//api routes
 
 app.listen(PORT, () => {
   console.log(`API server now on port ${PORT}!`);
