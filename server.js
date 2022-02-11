@@ -10,6 +10,7 @@ const uniqid = require('uniqid');
 
 // Set up Express.js
 const express = require('express');
+const { formatWithOptions } = require('util');
 const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -20,7 +21,6 @@ const PORT = process.env.PORT || 3001;
 
 // const apiRoutes = require('./routes/apiRoutes');
 // const htmlRoutes = require('./routes/htmlRoutes');
-
 
 
 // Use apiRoutes
@@ -38,17 +38,19 @@ const PORT = process.env.PORT || 3001;
 
 // HTML Routes
 
-// GET /notes should return `notes.html` file.
+// GET route '/' for landing page, returns index.html page.
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, './public/index.html'));
+})
+
+// GET route '/notes', returns `notes.html` page.
 app.get('/notes', (req, res) => {
   res.sendFile(path.join(__dirname, 'public/notes.html'));
 });
 
-// GET /api/db returns results in JSON to the browser window
+// GET '/api/db' returns results in JSON to the browser window
 app.get('/api/db', (req, res) => {
   let results = notes;
-  if (req.query) {
-    results = filterByQuery(req.query, results);
-  }
   res.json(results);
 });
 
@@ -56,6 +58,25 @@ app.get('/api/db', (req, res) => {
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, './public/index.html'));
 });
+
+// POST route to add a new user note
+app.post('/api/notes', (req, res) => {
+
+  // Get notes from body of request.
+  let note = req.body;
+  
+  // Assign an id to the new note using uniqid npm.
+  note.id = uniqid;
+  
+  // Add a note object to the note array.
+  notes.push(note);
+  
+  // Update the json file to display all notes from db/db.json file / object array.
+  fs.writeFileSync(path.join(__dirname, './db/db.json'), JSON.stringify({ notes: notes}, null, 2));
+  
+  // Respond with note object that was added and display on page.
+  res.json(note);
+})
 
 // API Routes
 
