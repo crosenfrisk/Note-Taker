@@ -1,35 +1,38 @@
-// modeling after zookeeper 
-// const router = require('express').Router();
-// const { filterByQuery, findById, createNewAnimal, validateAnimal } = require('../../lib/animals');
-// const { animals } = require('../../data/animals');
+// ----- API Routes ----- //
+// const fs = require("fs");
+// const path = require("path");
+// const express = require("express");
+// const router = require("express").Router();
 
-// router.get('/animals', (req, res) => {
-//   let results = animals;
-//   if (req.query) {
-//     results = filterByQuery(req.query, results);
-//   }
-//   res.json(results);
+// // ----- API Routes ----- //
+
+// // GET route '/api/notes' returns stored notes from JSON to the browser window
+// router.get("/api/notes", (req, res) => {
+//   res.json(notes);
 // });
 
-// router.get('/animals/:id', (req, res) => {
-//   const result = findById(req.params.id, animals);
-//   if (result) {
-//     res.json(result);
-//   } else {
-//     res.send(404);
-//   }
-// });
+// // POST route to add a new user note
+// router.post("/api/notes", (req, res) => {
+//   // Get notes from body of request.
+//   let note = req.body;
 
-// router.post('/animals', (req, res) => {
-//   // set id based on what the next index of the array will be
-//   req.body.id = animals.length.toString();
+//   // Assign an id to the new note using uniqid npm.
+//   note.id = uniqid;
 
-//   if (!validateAnimal(req.body)) {
-//     res.status(400).send('The animal is not properly formatted.');
-//   } else {
-//     const animal = createNewAnimal(req.body, animals);
-//     res.json(animal);
-//   }
+//   // Add a note object to the note array.
+//   notes.push(note);
+
+//   // Update the json file to display all notes from db/db.json file / object array.
+//   fs.writeFileSync(
+//     path.join(__dirname, "./db/db.json"),
+//     JSON.stringify({ notes: notes }, null, 2)
+//   );
+
+//   // Respond with note object that was added and display on page.
+//   res.json(note);
+
+//   // Update console to confirm add:
+//   console.log("Your new note: " + note + " has been added!");
 // });
 
 // module.exports = router;
