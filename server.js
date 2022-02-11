@@ -43,7 +43,7 @@ app.post("/api/notes", (req, res) => {
   // Get notes from body of request.
   let note = req.body;
   // Assign an id to the new note using uniqid npm.
-  note.id = uniqid;
+  note.id = uniqid();
   // Add a note object to the note array.
   notes.push(note);
   // Update the json file to display all notes from db/db.json file / object array.
@@ -59,7 +59,7 @@ app.post("/api/notes", (req, res) => {
 app.delete("/api/notes/:id", (req, res) => {
 
   // Get id from selected note to delete
-  const { id } = req.params.id;
+  const id = req.params.id;
 
   // Filter notes array to locate specific note with id.
   const isolateNote = notes.filter(note => note.id === id);

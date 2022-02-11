@@ -1,16 +1,3 @@
 {
-  "notes": [
-    {
-      "title": "New Note",
-      "text": "Testing\n123"
-    },
-    {
-      "title": "Will this also show up?",
-      "text": "Good to know!"
-    },
-    {
-      "title": "Order Groceries",
-      "text": "Bananas\nKale\nBlack Beans"
-    }
-  ]
+  "notes": []
 }
