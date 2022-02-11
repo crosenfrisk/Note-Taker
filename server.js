@@ -1,31 +1,40 @@
+// Use fs for file management and path for directing files
 const fs = require('fs');
 const path = require('path');
-const express = require('express');
 
-const PORT = process.env.PORT || 3001;
-const app = express();
-
+// Import existing notes from db/db.json 
 const { notes } = require('./db/db.json');
+
+// Use Uniqid npm to create ids for new notes
+const uniqid = require('uniqid'); 
+
+// Set up Express.js
+const express = require('express');
+const app = express();
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(express.static('./public'));
+
+// Assign port
+const PORT = process.env.PORT || 3001;
 
 // const apiRoutes = require('./routes/apiRoutes');
 // const htmlRoutes = require('./routes/htmlRoutes');
 
-// app.use(express.urlencoded({ extended: true }));
-// app.use(express.json());
-// app.use(express.static('./public'));
+
 
 // Use apiRoutes
 // app.use('/api', apiRoutes);
 // app.use('/', htmlRoutes);
 
 // Function created to filter by id, needed later for removal and re-writing of db.json
-function filterByQuery(query, notesArray) {
-  let filteredResults = notesArray;
-  if (query.id) {
-    filteredResults = filteredResults.filter(results => results.id === query.id);
-  }
-  return filteredResults;
-}
+// function filterByQuery(query, notesArray) {
+//   let filteredResults = notesArray;
+//   if (query.id) {
+//     filteredResults = filteredResults.filter(results => results.id === query.id);
+//   }
+//   return filteredResults;
+// }
 
 // HTML Routes
 
@@ -57,12 +66,20 @@ app.get('/api/notes', (req, res) => {
 });
 
 
-// POST /api/notes should receive a new note to save on the request body, add it to the `db.json` file
-// Then return the new note to the client.
-// Give each note a unique id when created. maybe: https://www.npmjs.com/package/uniqid?
+// POST /api/notes should receive a new note to save on the request BODY, add it to the `db.json` file
 app.post('/api/notes', (req, res) => {
-  
-})
+  let note = req.body;
+  // Give each note a unique id when created using uniqid npm
+  note.id = uniqid;
+  // Add new note object to the `db.json` "notes" array
+  notes.push(note);
+  // Update the `db.json` file to include the new note
+  fs.writeFileSync(path.join(__dirname, './db/db.json'), json.stringify({notes: notes}, null, 2));
+  // Respond displaying added note object to page
+  res.json(note);
+  // Update console to confirm add:
+  console.log('Your new note: ' + note + ' has been added');
+});
 
 app.listen(PORT, () => {
   console.log(`API server now on port ${PORT}!`);

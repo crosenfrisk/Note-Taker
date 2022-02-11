@@ -1,9 +1,14 @@
-// from zookeeper
-// const router = require('express').Router();
-// const animalRoutes = require('./animalRoutes');
-// const zookeeperRoutes = require('./zookeeperRoutes');
+// Imports
+const express = require('express');
+const router = require('express').Router();
 
-// router.use(animalRoutes);
-// router.use(zookeeperRoutes);
+// Route Paths
+const apiRoutes = require('./routes/apiRoutes');
+const htmlRoutes = require('./routes/htmlRoutes');
 
-// module.exports = router;
+// Use Routes
+router.use(apiRoutes);
+router.use(htmlRoutes);
+
+module.exports = router;
+
