@@ -1,92 +1,16 @@
 {
   "notes": [
     {
-      "title": "Testing again",
-      "text": "new note"
+      "title": "New Note",
+      "text": "Testing\n123"
     },
     {
-      "title": "Finish server.js today!",
-      "text": "Write delete route so I can test functionality."
+      "title": "Will this also show up?",
+      "text": "Good to know!"
     },
     {
-      "title": "Display note please",
-      "text": "Looking to test"
-    },
-    {
-      "title": "tacos",
-      "text": "Buy fixings"
-    },
-    {
-      "title": "Testing again",
-      "text": "notes are in JSON but not on side, what am I missing?"
-    },
-    {
-      "title": "Hey!",
-      "text": "Checking in!"
-    },
-    {
-      "title": "howdy!",
-      "text": "hello?"
-    },
-    {
-      "title": "Brand new start",
-      "text": "saving note"
-    },
-    {
-      "title": "Now?",
-      "text": "Testing"
-    },
-    {
-      "title": "andrew is here!",
-      "text": "say hi!"
-    },
-    {
-      "title": "joke",
-      "text": "hahaha"
-    },
-    {
-      "title": "kitty",
-      "text": "like pets"
-    },
-    {
-      "title": "jolly good",
-      "text": "nice"
-    },
-    {
-      "title": "note adding",
-      "text": "try again"
-    },
-    {
-      "title": "new note",
-      "text": "working?"
-    },
-    {
-      "title": "gibberish",
-      "text": "a;slfjk"
-    },
-    {
-      "title": "aslkfj",
-      "text": "a;slfjka;lksjdf"
-    },
-    {
-      "title": "351",
-      "text": "today"
-    },
-    {
-      "title": "howdy partner!",
-      "text": "it's me!"
-    },
-    {
-      "title": "dinner",
-      "text": "buy food"
-    },
-    {
-      "title": "high five",
-      "text": "for real where is this?"
-    },
-    {
-      "title": "where are my notes?",
-      "text": "what is not connecting here?"
+      "title": "Order Groceries",
+      "text": "Bananas\nKale\nBlack Beans"
     }
   ]
 }
