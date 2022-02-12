@@ -23,9 +23,7 @@ router.post("/notes", (req, res) => {
   let note = req.body;
 
   // Assign an id to the new note using uniqid npm.
-  note.id = uniqid();
-  console.log(note, "test");
-  
+  note.id = uniqid();  
 
   // Add a note object to the note array.
   notes.push(note);
