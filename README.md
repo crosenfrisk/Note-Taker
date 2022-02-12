@@ -7,6 +7,8 @@
   ## Description
   **takeNote** is an application that can be used to write and save notes. This application uses an Express.js back end and will save and retrieve note data from a JSON file.
 
+  My job was to build the back end of the application and then connect to the application's already existing front end. See [Credits](#Credits) for details.
+
 
   ## Preview
   ![takeNote Landing Page](public/assets/images/LandingPage.png)
@@ -18,12 +20,11 @@
   * [Credits](#Credits)
   * [License](#License)
   * [Contributions](#Contributions)
-  * [Test](#Test)
   * [Questions](#Questions)
   
 
   ## Installation
-  The user may visit the [deployed site]() to use from their web browser, or they may download a copy of this repository and open from within their own editor.
+  The user may visit the [site deployed on Heroku](https://git.heroku.com/take-note-01.git) to use from their web browser, or they may download a copy of this repository and open from within their own editor.
 
 
   ## Usage
@@ -47,9 +48,12 @@
 
   ## Credits
 
-  Source code from [miniature-eureka](https://github.com/coding-boot-camp/miniature-eureka)
+  * Application source code is from [miniature-eureka](https://github.com/coding-boot-camp/miniature-eureka).
+
+  * Node.js and Express.js are required to run if you intend to download the application.
   
-  My job was to build the back end of the application and then connect to the application's already existing front end.
+  * [Article about creating routes for reference](https://expressjs.com/en/guide/routing.html).
+  
 
 
   ## License
@@ -69,12 +73,6 @@
   ## Contributions
   If you would like to make a contribution or suggestion, please contact me at the email address listed below or send me a DM on GitHub.
 
-
-  ## Test
-  N/A
-
-  
   ## Questions
   If you have any questions about this project, please contact me directly at claire.rosenfrisk@gmail.com. You can view more of my work on 
-  ![GitHub](/Develop/assets/images/github-brands.svg) [My GitHub Profile](https://github.com/crosenfrisk).
-
+  ![GitHub](public/assets/images/github-brands.svg) [My GitHub Profile](https://github.com/crosenfrisk)
