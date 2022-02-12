@@ -81,10 +81,5 @@ router.delete("/notes/:id", (req, res) => {
     // Update browser to display notes minus the note that was removed from the object array.
     res.json(isolateNote);
   });
-  
-  // GET '*' is a wildcard route that redirects all other get requests to the application's `index.html` landing page.
-  router.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, "../../public/index.html"));
-  });
 
 module.exports = router;
