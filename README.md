@@ -24,7 +24,7 @@
   
 
   ## Installation
-  The user may visit the [site deployed on Heroku](https://git.heroku.com/take-note-01.git) to use from their web browser, or they may download a copy of this repository and open from within their own editor.
+  The user may visit the [site deployed on Heroku](https://take-note-01.herokuapp.com/) to use from their web browser, or they may download a copy of this repository and open from within their own editor.
 
 
   ## Usage
