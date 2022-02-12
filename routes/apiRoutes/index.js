@@ -1,18 +1,3 @@
-// Imports
-// const express = require('express');
-// const router = require('express').Router();
-// const app = express();
-
-// // Route Paths
-// const apiRoutes = require('./index');
-// const htmlRoutes = require('../htmlRoutes/index');
-
-// // Use Routes
-// app.use(apiRoutes);
-// app.use(htmlRoutes);
-
-// module.exports = router;
-
 const fs = require("fs");
 const path = require("path");
 const express = require("express");
